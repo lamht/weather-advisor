@@ -27,7 +27,7 @@ namespace WeatherAdvisor
                 var r = new AdviceModel()
                 {
                     AdviceName = advice.GetAdviceName(),
-                    ShoudDo = advice.Advise(weatherData)
+                    ShouldDo = advice.Advise(weatherData)
                 };
                 result.Add(r);
             }

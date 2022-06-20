@@ -1,0 +1,93 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+@if (!String.IsNullOrEmpty(Model.Error))
+{
+<div class="alert alert-danger" role="alert">
+  @Model.Error
+</div>
+}
+<div class="row justify-content-center">
+    <div class="col-sm-10 col-md-8">
+      <h1 class="display-4">Weather Advisor</h1>
+        <form method="post">
+            @Html.AntiForgeryToken()
+            <div class="form-group">
+                <label for="zipcode">Zipcode</label>
+                <input type="text" class="form-control" id="zipcode" name="zipcode" required />
+            </div>        
+            <div class="mt-2">
+                <button class="btn btn-success advice pull-right" id="advice" type="submit">Get advices</button>            
+            </div>
+        </form>
+    </div>    
+ </div>
+
+    
+
+
+@if (Request.Method.ToUpper() == "POST")
+{
+    @if (Model.Location != null)
+    {
+        <div class="row justify-content-center mt-2">            
+            <div class="col-sm-10 col-md-8">
+                 <h4>Location</h4>
+            </div> 
+        </div>
+        <div class="row justify-content-center">            
+            <div class="col-sm-5 col-md-4">
+                Name
+            </div> 
+            <div class="col-sm-5 col-md-4">
+                @Model.Location.Name
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-5 col-md-4">
+                Country
+            </div> 
+            <div class="col-sm-5 col-md-4">
+                @Model.Location.Country
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-5 col-md-4">
+                Region
+            </div> 
+            <div class="col-sm-5 col-md-4">
+                @Model.Location.Region
+            </div>
+        </div>
+    }
+
+    @if (Model.Advices != null)
+    {        
+        <div class="row justify-content-center mt-2">            
+            <div class="col-sm-10 col-md-8">
+                 <h4>Advices</h4>
+            </div> 
+        </div>
+        foreach (var advice in Model.Advices)
+        {
+            <div class="row justify-content-center">
+                <div class="col-sm-5 col-md-4">
+                    @advice.AdviceName
+                </div> 
+                <div class="col-sm-5 col-md-4">
+                    @if (advice.ShoudDo)
+                    {
+                        <span>Yes</span>
+                    }else
+                    {
+                        <span>No</span>
+                    }
+                </div>
+            </div>
+        }
+        
+    }
+}

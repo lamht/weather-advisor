@@ -10,6 +10,13 @@
         public int Pressure { get; set; }
 
         public string Error { get; set; }
+        
+        public WeatherModel()
+        {
+            Location = new Location();
+            Error = string.Empty;
+            WeatherDescriptions = new List<string>();
+        }
 
     }
     public class Location
@@ -19,5 +26,13 @@
         public string Country { get; set; }
 
         public string Region { get; set; }
+
+        
+        public Location()
+        {
+            Name = string.Empty;
+            Country = string.Empty;
+            Region = string.Empty;
+        }
     }
 }

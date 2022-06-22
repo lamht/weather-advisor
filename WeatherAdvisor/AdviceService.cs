@@ -24,9 +24,8 @@ namespace WeatherAdvisor
             List<AdviceModel> result = new List<AdviceModel>();
             foreach (var advice in advices)
             {
-                var r = new AdviceModel()
+                var r = new AdviceModel(advice.GetAdviceName())
                 {
-                    AdviceName = advice.GetAdviceName(),
                     ShouldDo = advice.Advise(weatherData)
                 };
                 result.Add(r);

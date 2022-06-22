@@ -12,5 +12,12 @@ namespace WeatherAdvisor.Model.WeatherStack
 
         [JsonProperty("current")]
         public Current Current { get; set; }
+
+        public SuccessResult()
+        {
+            Request = new Request();
+            Location = new Location();
+            Current = new Current();
+        }
     }
 }

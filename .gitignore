@@ -8,6 +8,7 @@
 *.sln.docstates
 .DS_Store
 src/.DS_Store
+.sonarqube
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs

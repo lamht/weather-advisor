@@ -9,6 +9,11 @@ namespace WeatherAdvisor.Model.WeatherStack
 
         [JsonProperty("error")]
         public Error Error { get; set; }
+
+        public ErrorResult()
+        {
+            Error = new Error();
+        }
     }
     public class Error
     {
@@ -20,5 +25,11 @@ namespace WeatherAdvisor.Model.WeatherStack
 
         [JsonProperty("info")]
         public string Info { get; set; }
+
+        public Error()
+        {
+            Type = string.Empty;
+            Info = string.Empty;
+        }
     }
 }

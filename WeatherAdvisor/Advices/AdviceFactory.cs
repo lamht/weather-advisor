@@ -1,6 +1,6 @@
 ﻿namespace WeatherAdvisor.Advices
 {
-    public class AdviceFactory
+    public static class AdviceFactory
     {
         public static List<Advice> GetAdvices()
         {

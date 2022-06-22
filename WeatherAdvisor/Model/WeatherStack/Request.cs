@@ -15,5 +15,13 @@ namespace WeatherAdvisor.Model.WeatherStack
 
         [JsonProperty("unit")]
         public string Unit { get; set; }
+
+        public Request()
+        {
+            Type = string.Empty;
+            Query = string.Empty;
+            Language = string.Empty;
+            Unit = string.Empty;
+        }
     }
 }

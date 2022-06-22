@@ -51,5 +51,14 @@ namespace WeatherAdvisor.Model.WeatherStack
 
         [JsonProperty("is_day")]
         public string IsDay { get; set; }
+
+        public Current()
+        {
+            ObservationTime = string.Empty;
+            WeatherIcons = new List<string>();
+            WeatherDescriptions = new List<string>();
+            WindDir = string.Empty;
+            IsDay = string.Empty;
+        }
     }
 }

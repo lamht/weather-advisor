@@ -18,6 +18,7 @@ namespace WeatherAdvisor.Pages
         {
             _logger = logger;
             _adviceService = adviceService;
+            Error = string.Empty;
         }
 
         public async Task<IActionResult> OnGetAsync()

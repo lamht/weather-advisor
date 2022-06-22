@@ -30,6 +30,18 @@ namespace WeatherAdvisor.Model.WeatherStack
 
         [JsonProperty("utc_offset")]
         public string UtcOffset { get; set; }
+
+        public Location()
+        {
+            Name = string.Empty;
+            Country = string.Empty;
+            Region = string.Empty;
+            Lat = string.Empty;
+            Lon = string.Empty;
+            TimezoneId = string.Empty;
+            Localtime = string.Empty;
+            UtcOffset = string.Empty;
+        }
     }
 
 }

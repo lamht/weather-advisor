@@ -1,6 +1,6 @@
 ﻿namespace WeatherAdvisor.Advices
 {
-    class AdviceName
+    static class AdviceName
     {
         public const string SHOULD_GO_OUTSIDE = "Should I go outside?";
         public const string CAN_FLY_THE_KITE = "Can I fly my kite?";

@@ -19,6 +19,9 @@ namespace WeatherAdvisor.Pages
             _logger = logger;
             _adviceService = adviceService;
             Error = string.Empty;
+            Location = new Location();
+            Advices = new List<AdviceModel>();
+            Zipcode = string.Empty;
         }
 
         public async Task<IActionResult> OnGetAsync()

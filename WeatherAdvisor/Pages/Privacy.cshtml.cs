@@ -13,6 +13,7 @@ namespace WeatherAdvisor.Pages
 
         public void OnGet()
         {
+            _logger.LogInformation("Get privacy page");
         }
     }
 }

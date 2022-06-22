@@ -5,7 +5,6 @@ using System.Diagnostics;
 namespace WeatherAdvisor.Pages
 {
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    [IgnoreAntiforgeryToken]
     public class ErrorModel : PageModel
     {
         public string? RequestId { get; set; }
@@ -21,6 +20,7 @@ namespace WeatherAdvisor.Pages
 
         public void OnGet()
         {
+            _logger.LogInformation("Get error page");
             RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier;
         }
     }
